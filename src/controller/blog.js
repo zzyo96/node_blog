@@ -19,6 +19,7 @@ const getList = (author,keyword) =>{
 };
 
 const getDetail = (id)=>{
+  console.log('iddd',id)
   return[{
     id:1,
     title:'标题A',
@@ -28,7 +29,25 @@ const getDetail = (id)=>{
   },]
 };
 
+const newBlog = (blogData = {})=>{
+//  blogData是一个博客对象， 包含title,content属性
+  return{
+    id:3, //表示新建博客，插入到数据表里面的id
+  }
+};
+
+const updateBlog = (id,blogData = {})=>{
+  return true
+};
+
+const deleteBlog = (id)=>{
+  return true
+};
+
 module.exports = {
   getList,
-  getDetail
+  getDetail,
+  newBlog,
+  updateBlog,
+  deleteBlog
 };

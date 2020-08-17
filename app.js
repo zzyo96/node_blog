@@ -1,6 +1,6 @@
 const querystring = require('querystring');
 const handleBlogRouter = require('./src/router/blog.js')
-// const handleUserRouter = require('./src/router/user.js')
+const handleUserRouter = require('./src/router/user.js')
 
 //用于处理 post data
 const getPostData = (req)=>{
@@ -53,14 +53,14 @@ const serverHandle = (req,res) =>{
       return
     }
 
-// //  处理user路由
-//   const userData = handleUserRouter(req,res);
-//   if(userData){
-//     res.end(
-//       JSON.stringify(userData)
-//     );
-//     return
-//   }
+//  处理user路由
+  const userData = handleUserRouter(req,res);
+  if(userData){
+    res.end(
+      JSON.stringify(userData)
+    );
+    return
+  }
 
 //  未命中路由，返回404
     res.writeHead(404,{"Content-type":"text/plain"});
